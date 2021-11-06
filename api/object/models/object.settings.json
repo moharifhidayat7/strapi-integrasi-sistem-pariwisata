@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "objects",
+  "info": {
+    "name": "Object",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "facility": {
+      "type": "component",
+      "repeatable": true,
+      "component": "array.array"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "array.contact"
+    },
+    "users_permissions_user": {
+      "via": "object",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "type": {
+      "model": "object-type",
+      "via": "objects"
+    },
+    "featured_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
+    },
+    "slideshow": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

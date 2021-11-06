@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_array_prices",
+  "info": {
+    "name": "Price",
+    "icon": "money-bill-wave"
+  },
+  "options": {},
+  "attributes": {
+    "variation": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_facility_arrays",
+  "info": {
+    "name": "Facility",
+    "icon": "universal-access",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

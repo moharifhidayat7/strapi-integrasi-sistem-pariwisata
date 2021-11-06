@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "object_types",
+  "info": {
+    "name": "Object Type"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "objects": {
+      "via": "type",
+      "collection": "object"
+    }
+  }
+}
