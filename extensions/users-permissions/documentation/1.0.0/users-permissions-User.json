@@ -1252,66 +1252,6 @@
               }
             }
           },
-          "object": {
-            "required": [
-              "id",
-              "name",
-              "address"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "address": {
-                "type": "string"
-              },
-              "youtube": {
-                "type": "string"
-              },
-              "facility": {
-                "type": "component"
-              },
-              "contact": {
-                "type": "component"
-              },
-              "users_permissions_user": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string"
-              },
-              "featured_image": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "slug": {
-                "type": "string"
-              },
-              "slideshow": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "name": {
             "type": "string"
           },
@@ -1387,6 +1327,105 @@
                 "type": "string"
               }
             }
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "address",
+                "type"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "youtube": {
+                  "type": "string"
+                },
+                "contact": {
+                  "type": "component"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "featured_image": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "slideshow": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "type": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "facility": {
+                  "type": "object"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "profile": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "picture": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1430,9 +1469,6 @@
           "role": {
             "type": "string"
           },
-          "object": {
-            "type": "string"
-          },
           "name": {
             "type": "string"
           },
@@ -1440,6 +1476,15 @@
             "type": "string"
           },
           "phone": {
+            "type": "string"
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "profile": {
             "type": "string"
           },
           "created_by": {

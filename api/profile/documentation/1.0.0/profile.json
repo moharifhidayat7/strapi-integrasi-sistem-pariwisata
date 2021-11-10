@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/object-types": {
+    "/profiles": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,10 +10,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Profile"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Object-type"
+          "Profile"
         ],
         "parameters": [
           {
@@ -202,11 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Profile"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Object-type"
+          "Profile"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewObject-type"
+                "$ref": "#/components/schemas/NewProfile"
               }
             }
           }
         }
       }
     },
-    "/object-types/count": {
+    "/profiles/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -270,8 +265,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Object-type"
+          "Profile"
         ],
         "parameters": []
       }
     },
-    "/object-types/{id}": {
+    "/profiles/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -326,11 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Profile"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Object-type"
+          "Profile"
         ],
         "parameters": [
           {
@@ -392,11 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Profile"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Object-type"
+          "Profile"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewObject-type"
+                "$ref": "#/components/schemas/NewProfile"
               }
             }
           }
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Object-type"
+          "Profile"
         ],
         "parameters": [
           {
@@ -527,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Object-type": {
+      "Profile": {
         "required": [
           "id",
           "name"
@@ -539,72 +526,149 @@
           "name": {
             "type": "string"
           },
-          "objects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "address"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "youtube": {
-                  "type": "string"
-                },
-                "facility": {
-                  "type": "component"
-                },
-                "contact": {
-                  "type": "component"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "featured_image": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "slideshow": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "picture": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "picture": {
+                "type": "string"
+              },
+              "objects": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "profile": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           }
         }
       },
-      "NewObject-type": {
+      "NewProfile": {
         "required": [
           "name"
         ],
@@ -612,11 +676,14 @@
           "name": {
             "type": "string"
           },
-          "objects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "users_permissions_user": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -628,5 +695,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Profile"
+    }
+  ]
 }

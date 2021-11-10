@@ -520,7 +520,8 @@
         "required": [
           "id",
           "name",
-          "address"
+          "address",
+          "type"
         ],
         "properties": {
           "id": {
@@ -537,24 +538,6 @@
           },
           "youtube": {
             "type": "string"
-          },
-          "facility": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "contact": {
             "type": "array",
@@ -620,9 +603,6 @@
               "role": {
                 "type": "string"
               },
-              "object": {
-                "type": "string"
-              },
               "name": {
                 "type": "string"
               },
@@ -635,31 +615,14 @@
               "picture": {
                 "type": "string"
               },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "type": {
-            "required": [
-              "id",
-              "name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
               "objects": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "profile": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -806,9 +769,6 @@
               }
             }
           },
-          "slug": {
-            "type": "string"
-          },
           "slideshow": {
             "type": "array",
             "items": {
@@ -878,13 +838,90 @@
                 }
               }
             }
+          },
+          "type": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "facility": {
+            "type": "object"
+          },
+          "logo": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
       "NewObject": {
         "required": [
           "name",
-          "address"
+          "address",
+          "type"
         ],
         "properties": {
           "name": {
@@ -898,24 +935,6 @@
           },
           "youtube": {
             "type": "string"
-          },
-          "facility": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "contact": {
             "type": "array",
@@ -950,7 +969,10 @@
             "type": "string"
           },
           "slug": {
-            "type": "string"
+            "type": "uid"
+          },
+          "facility": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"

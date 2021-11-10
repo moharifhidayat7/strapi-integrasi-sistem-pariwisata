@@ -27,24 +27,15 @@
     "youtube": {
       "type": "string"
     },
-    "facility": {
-      "type": "component",
-      "repeatable": true,
-      "component": "array.array"
-    },
     "contact": {
       "type": "component",
       "repeatable": true,
       "component": "array.contact"
     },
     "users_permissions_user": {
-      "via": "object",
+      "via": "objects",
       "plugin": "users-permissions",
       "model": "user"
-    },
-    "type": {
-      "model": "object-type",
-      "via": "objects"
     },
     "featured_image": {
       "model": "file",
@@ -66,12 +57,29 @@
       "required": false,
       "pluginOptions": {}
     },
-    "slug": {
-      "type": "string",
-      "unique": true
-    },
     "slideshow": {
       "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "facility": {
+      "type": "json"
+    },
+    "logo": {
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images"
