@@ -87,6 +87,10 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "products": {
+      "via": "object",
+      "collection": "product"
     }
   }
 }

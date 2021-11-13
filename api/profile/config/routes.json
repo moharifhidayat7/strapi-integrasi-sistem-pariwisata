@@ -33,6 +33,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/profiles/change-password",
+      "handler": "profile.changePassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
       "path": "/profiles/:id",
       "handler": "profile.update",

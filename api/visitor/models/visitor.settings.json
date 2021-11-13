@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visitors",
+  "info": {
+    "name": "visitor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "people": {
+      "type": "integer",
+      "default": 1,
+      "min": 1
+    }
+  }
+}

@@ -914,6 +914,51 @@
                 "type": "string"
               }
             }
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "featured_image"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "featured_image": {
+                  "type": "string"
+                },
+                "prices": {
+                  "type": "component"
+                },
+                "object": {
+                  "type": "string"
+                },
+                "visible": {
+                  "type": "boolean"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -973,6 +1018,12 @@
           },
           "facility": {
             "type": "object"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

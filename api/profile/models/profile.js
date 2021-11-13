@@ -8,13 +8,24 @@
 module.exports = {
     lifecycles: {
         async beforeCreate(data) {
-            await strapi.query('user', "users-permissions").create({
+            await strapi.plugins['users-permissions'].services.user.add({
+                confirmed: true,
+                blocked: false,
+                username: data.email,
                 email: data.email,
                 name: data.name,
                 password: data.password,
                 phone: data.phone,
-                role: "3",
-            })
+                provider: "local",
+                role: data.role,  
+            });
+            // await strapi.query('user', "users-permissions").create({
+            //     email: data.email,
+            //     name: data.name,
+            //     password: password,
+            //     phone: data.phone,
+            //     role: "3",
+            // })
         },
       },
 };
