@@ -5,10 +5,4 @@
  * to customize this model
  */
 
-module.exports = {
-    lifecycle: {
-        async beforeCreate(data) {
-            console.log(data)
-        }
-    }
-};
+module.exports = {};

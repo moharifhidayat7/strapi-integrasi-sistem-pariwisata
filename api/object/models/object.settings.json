@@ -91,6 +91,10 @@
     "products": {
       "via": "object",
       "collection": "product"
+    },
+    "packages": {
+      "via": "object",
+      "collection": "package"
     }
   }
 }

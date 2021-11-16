@@ -667,28 +667,6 @@
               }
             }
           },
-          "prices": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "variation",
-                "price"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "variation": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                }
-              }
-            }
-          },
           "object": {
             "required": [
               "id",
@@ -751,6 +729,12 @@
                   "type": "string"
                 }
               },
+              "packages": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -762,6 +746,12 @@
           "visible": {
             "type": "boolean",
             "default": true
+          },
+          "category": {
+            "type": "string"
+          },
+          "prices": {
+            "type": "object"
           }
         }
       },
@@ -776,34 +766,18 @@
           "description": {
             "type": "string"
           },
-          "prices": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "variation",
-                "price"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "variation": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                }
-              }
-            }
-          },
           "object": {
             "type": "string"
           },
           "visible": {
             "type": "boolean",
             "default": true
+          },
+          "category": {
+            "type": "string"
+          },
+          "prices": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"
