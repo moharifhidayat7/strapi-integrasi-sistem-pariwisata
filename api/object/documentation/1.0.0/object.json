@@ -540,28 +540,25 @@
             "type": "string"
           },
           "contact": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                }
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
               }
             }
           },
@@ -606,9 +603,6 @@
               "name": {
                 "type": "string"
               },
-              "address": {
-                "type": "string"
-              },
               "phone": {
                 "type": "string"
               },
@@ -623,6 +617,9 @@
               },
               "profile": {
                 "type": "string"
+              },
+              "address": {
+                "type": "component"
               },
               "created_by": {
                 "type": "string"
@@ -983,8 +980,50 @@
                 "object": {
                   "type": "string"
                 },
-                "harga": {
+                "price": {
                   "type": "object"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "rooms": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "price"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "gallery": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "object": {
+                  "type": "string"
+                },
+                "available": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -1017,28 +1056,25 @@
             "type": "string"
           },
           "contact": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                }
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
               }
             }
           },
@@ -1061,6 +1097,12 @@
             }
           },
           "packages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rooms": {
             "type": "array",
             "items": {
               "type": "string"

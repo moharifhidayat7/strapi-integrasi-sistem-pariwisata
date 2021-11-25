@@ -42,8 +42,8 @@
       "pluginOptions": {}
     },
     "object": {
-      "model": "object",
-      "via": "products"
+      "via": "products",
+      "model": "object"
     },
     "visible": {
       "type": "boolean",

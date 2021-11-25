@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/packages": {
+    "/rooms": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Package"
+                    "$ref": "#/components/schemas/Room"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Room"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Room"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Room"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPackage"
+                "$ref": "#/components/schemas/NewRoom"
               }
             }
           }
         }
       }
     },
-    "/packages/count": {
+    "/rooms/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Room"
         ],
         "parameters": []
       }
     },
-    "/packages/{id}": {
+    "/rooms/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Room"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Room"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Room"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Room"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPackage"
+                "$ref": "#/components/schemas/NewRoom"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Room"
         ],
         "parameters": [
           {
@@ -514,10 +514,11 @@
   },
   "components": {
     "schemas": {
-      "Package": {
+      "Room": {
         "required": [
           "id",
-          "name"
+          "name",
+          "price"
         ],
         "properties": {
           "id": {
@@ -526,8 +527,78 @@
           "name": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
+          "price": {
+            "type": "integer"
+          },
+          "gallery": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "object": {
             "required": [
@@ -611,33 +682,30 @@
               }
             }
           },
-          "price": {
-            "type": "object"
-          },
-          "content": {
-            "type": "string"
+          "available": {
+            "type": "string",
+            "format": "date"
           }
         }
       },
-      "NewPackage": {
+      "NewRoom": {
         "required": [
-          "name"
+          "name",
+          "price"
         ],
         "properties": {
           "name": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
+          "price": {
+            "type": "integer"
           },
           "object": {
             "type": "string"
           },
-          "price": {
-            "type": "object"
-          },
-          "content": {
-            "type": "string"
+          "available": {
+            "type": "string",
+            "format": "date"
           },
           "created_by": {
             "type": "string"
@@ -651,7 +719,7 @@
   },
   "tags": [
     {
-      "name": "Package"
+      "name": "Room"
     }
   ]
 }

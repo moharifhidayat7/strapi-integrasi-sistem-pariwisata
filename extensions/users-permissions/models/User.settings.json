@@ -63,9 +63,6 @@
       "type": "string",
       "required": true
     },
-    "address": {
-      "type": "text"
-    },
     "phone": {
       "type": "string"
     },
@@ -86,6 +83,11 @@
     "profile": {
       "via": "users_permissions_user",
       "model": "profile"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "array.address"
     }
   }
 }

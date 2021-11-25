@@ -1255,9 +1255,6 @@
           "name": {
             "type": "string"
           },
-          "address": {
-            "type": "string"
-          },
           "phone": {
             "type": "string"
           },
@@ -1398,6 +1395,12 @@
                     "type": "string"
                   }
                 },
+                "rooms": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -1435,6 +1438,26 @@
                 "type": "string"
               },
               "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "address": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "line1": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "postcode": {
                 "type": "string"
               }
             }
@@ -1484,9 +1507,6 @@
           "name": {
             "type": "string"
           },
-          "address": {
-            "type": "string"
-          },
           "phone": {
             "type": "string"
           },
@@ -1498,6 +1518,26 @@
           },
           "profile": {
             "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "line1": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "postcode": {
+                "type": "string"
+              }
+            }
           },
           "created_by": {
             "type": "string"

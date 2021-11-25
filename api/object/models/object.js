@@ -5,6 +5,9 @@
  * to customize this model
  */
 
+const { sanitizeEntity } = require('strapi-utils');
+
+
 function YouTubeGetID(url){
   url = url.split(/(vi\/|v%3D|v=|\/v\/|youtu\.be\/|\/embed\/)/);
   return undefined !== url[2]?url[2].split(/[^0-9a-z_\-]/i)[0]:'';
@@ -25,9 +28,14 @@ module.exports = {
           
         },
         async beforeUpdate(params, data) {
-          if(data.name){
+          const { id } = params;
+
+          const entity = await strapi.services.object.findOne({ id });
+
+          if(data.name && data.name != entity.name){
             data.slug = await strapi.plugins['content-manager'].services.uid.generateUIDField({contentTypeUID:'application::object.object',field:'slug',data})
           }
+
           if(data.youtube) {
             data.youtube = 'https://youtube.com/embed/'+YouTubeGetID(data.youtube)
             if(YouTubeGetID(data.youtube)==''){

@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "profiles",
+  "collectionName": "rooms",
   "info": {
-    "name": "Profile",
+    "name": "Room",
     "description": ""
   },
   "options": {
@@ -16,14 +16,12 @@
       "type": "string",
       "required": true
     },
-    "address": {
-      "type": "text"
+    "price": {
+      "type": "integer",
+      "required": true
     },
-    "phone": {
-      "type": "string"
-    },
-    "picture": {
-      "model": "file",
+    "gallery": {
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
         "images"
@@ -32,10 +30,12 @@
       "required": false,
       "pluginOptions": {}
     },
-    "users_permissions_user": {
-      "via": "profile",
-      "plugin": "users-permissions",
-      "model": "user"
+    "object": {
+      "model": "object",
+      "via": "rooms"
+    },
+    "available": {
+      "type": "date"
     }
   }
 }

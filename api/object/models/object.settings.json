@@ -29,7 +29,7 @@
     },
     "contact": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "array.contact"
     },
     "users_permissions_user": {
@@ -95,6 +95,10 @@
     "packages": {
       "via": "object",
       "collection": "package"
+    },
+    "rooms": {
+      "via": "object",
+      "collection": "room"
     }
   }
 }

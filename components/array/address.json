@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_array_addresses",
+  "info": {
+    "name": "address",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "line1": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    }
+  }
+}

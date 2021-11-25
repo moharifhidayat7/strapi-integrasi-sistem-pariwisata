@@ -711,9 +711,6 @@
               "name": {
                 "type": "string"
               },
-              "address": {
-                "type": "string"
-              },
               "phone": {
                 "type": "string"
               },
@@ -728,6 +725,9 @@
               },
               "profile": {
                 "type": "string"
+              },
+              "address": {
+                "type": "component"
               },
               "created_by": {
                 "type": "string"
