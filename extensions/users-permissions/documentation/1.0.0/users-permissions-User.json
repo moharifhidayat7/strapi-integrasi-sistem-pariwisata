@@ -1461,6 +1461,37 @@
                 "type": "string"
               }
             }
+          },
+          "carts": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "productId": {
+                  "type": "integer"
+                },
+                "variation": {
+                  "type": "object"
+                },
+                "qty": {
+                  "type": "integer"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1537,6 +1568,12 @@
               "postcode": {
                 "type": "string"
               }
+            }
+          },
+          "carts": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "created_by": {

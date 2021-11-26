@@ -88,6 +88,10 @@
       "type": "component",
       "repeatable": false,
       "component": "array.address"
+    },
+    "carts": {
+      "via": "users_permissions_user",
+      "collection": "cart"
     }
   }
 }
