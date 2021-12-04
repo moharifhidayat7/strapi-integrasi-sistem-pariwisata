@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_array_rekenings",
+  "info": {
+    "name": "rekening",
+    "icon": "credit-card"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rek": {
+      "type": "string"
+    }
+  }
+}

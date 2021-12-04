@@ -387,6 +387,74 @@
                 "type": "string"
               }
             }
+          },
+          "BRI": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
+          },
+          "MANDIRI": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
+          },
+          "BCA": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
+          },
+          "BNI": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -394,6 +462,74 @@
         "properties": {
           "fee": {
             "type": "integer"
+          },
+          "BRI": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
+          },
+          "MANDIRI": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
+          },
+          "BCA": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
+          },
+          "BNI": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rek": {
+                "type": "string"
+              }
+            }
           },
           "created_by": {
             "type": "string"

@@ -1492,6 +1492,104 @@
                 }
               }
             }
+          },
+          "orders": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "items"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "items": {
+                  "type": "object"
+                },
+                "resi": {
+                  "type": "string"
+                },
+                "ongkir": {
+                  "type": "integer"
+                },
+                "konfirmasi": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "paid",
+                    "unpaid",
+                    "waiting",
+                    "success",
+                    "sent",
+                    "canceled"
+                  ]
+                },
+                "address": {
+                  "type": "component"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "fee": {
+                  "type": "integer"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "booking": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "checkin": {
+                "type": "string"
+              },
+              "checkout": {
+                "type": "string"
+              },
+              "room": {
+                "type": "string"
+              },
+              "people": {
+                "type": "integer"
+              },
+              "price": {
+                "type": "integer"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1575,6 +1673,15 @@
             "items": {
               "type": "string"
             }
+          },
+          "orders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "booking": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

@@ -685,6 +685,49 @@
           "available": {
             "type": "string",
             "format": "date"
+          },
+          "bookings": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin": {
+                  "type": "string"
+                },
+                "checkout": {
+                  "type": "string"
+                },
+                "room": {
+                  "type": "string"
+                },
+                "people": {
+                  "type": "integer"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -706,6 +749,12 @@
           "available": {
             "type": "string",
             "format": "date"
+          },
+          "bookings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

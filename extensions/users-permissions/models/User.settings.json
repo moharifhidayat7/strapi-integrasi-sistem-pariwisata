@@ -92,6 +92,14 @@
     "carts": {
       "via": "users_permissions_user",
       "collection": "cart"
+    },
+    "orders": {
+      "via": "users_permissions_user",
+      "collection": "order"
+    },
+    "booking": {
+      "via": "users_permissions_user",
+      "model": "booking"
     }
   }
 }

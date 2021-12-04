@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "payments",
   "info": {
-    "name": "Payment"
+    "name": "Payment",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -23,6 +24,26 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "BRI": {
+      "type": "component",
+      "repeatable": false,
+      "component": "array.rekening"
+    },
+    "MANDIRI": {
+      "type": "component",
+      "repeatable": false,
+      "component": "array.rekening"
+    },
+    "BCA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "array.rekening"
+    },
+    "BNI": {
+      "type": "component",
+      "repeatable": false,
+      "component": "array.rekening"
     }
   }
 }

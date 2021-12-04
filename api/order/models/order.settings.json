@@ -43,7 +43,28 @@
         "success",
         "sent",
         "canceled"
-      ]
+      ],
+      "default": "unpaid"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "array.address"
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "fee": {
+      "type": "integer",
+      "default": 0
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "orders"
     }
   }
 }

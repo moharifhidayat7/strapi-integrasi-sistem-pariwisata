@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/orders": {
+    "/bookings": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Order"
+                    "$ref": "#/components/schemas/Booking"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Booking"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Booking"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Booking"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewBooking"
               }
             }
           }
         }
       }
     },
-    "/orders/count": {
+    "/bookings/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Booking"
         ],
         "parameters": []
       }
     },
-    "/orders/{id}": {
+    "/bookings/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Booking"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Booking"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Booking"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Booking"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewBooking"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Booking"
         ],
         "parameters": [
           {
@@ -514,33 +514,27 @@
   },
   "components": {
     "schemas": {
-      "Order": {
+      "Booking": {
         "required": [
-          "id",
-          "items"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "items": {
-            "type": "object"
+          "checkin": {
+            "type": "string",
+            "format": "date"
           },
-          "resi": {
-            "type": "string"
+          "checkout": {
+            "type": "string",
+            "format": "date"
           },
-          "ongkir": {
-            "type": "integer"
-          },
-          "konfirmasi": {
+          "room": {
             "required": [
               "id",
               "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "price"
             ],
             "properties": {
               "id": {
@@ -549,47 +543,26 @@
               "name": {
                 "type": "string"
               },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
+              "price": {
                 "type": "integer"
               },
-              "height": {
-                "type": "integer"
+              "gallery": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
+              "object": {
                 "type": "string"
               },
-              "ext": {
+              "available": {
                 "type": "string"
               },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
+              "bookings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -599,47 +572,11 @@
               }
             }
           },
-          "status": {
-            "type": "string",
-            "default": "unpaid",
-            "enum": [
-              "paid",
-              "unpaid",
-              "waiting",
-              "success",
-              "sent",
-              "canceled"
-            ]
+          "people": {
+            "type": "integer"
           },
-          "address": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "line1": {
-                "type": "string"
-              },
-              "city": {
-                "type": "string"
-              },
-              "postcode": {
-                "type": "string"
-              }
-            }
-          },
-          "name": {
-            "type": "string"
-          },
-          "phone": {
-            "type": "string"
-          },
-          "fee": {
-            "type": "integer",
-            "default": 0
+          "price": {
+            "type": "integer"
           },
           "users_permissions_user": {
             "required": [
@@ -722,66 +659,41 @@
                 "type": "string"
               }
             }
-          }
-        }
-      },
-      "NewOrder": {
-        "required": [
-          "items"
-        ],
-        "properties": {
-          "items": {
-            "type": "object"
           },
-          "resi": {
-            "type": "string"
-          },
-          "ongkir": {
-            "type": "integer"
-          },
-          "status": {
-            "type": "string",
-            "default": "unpaid",
-            "enum": [
-              "paid",
-              "unpaid",
-              "waiting",
-              "success",
-              "sent",
-              "canceled"
-            ]
-          },
-          "address": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "line1": {
-                "type": "string"
-              },
-              "city": {
-                "type": "string"
-              },
-              "postcode": {
-                "type": "string"
-              }
-            }
-          },
-          "name": {
+          "email": {
             "type": "string"
           },
           "phone": {
             "type": "string"
+          }
+        }
+      },
+      "NewBooking": {
+        "properties": {
+          "checkin": {
+            "type": "string",
+            "format": "date"
           },
-          "fee": {
-            "type": "integer",
-            "default": 0
+          "checkout": {
+            "type": "string",
+            "format": "date"
+          },
+          "room": {
+            "type": "string"
+          },
+          "people": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
           },
           "users_permissions_user": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
             "type": "string"
           },
           "created_by": {
@@ -796,7 +708,7 @@
   },
   "tags": [
     {
-      "name": "Order"
+      "name": "Booking"
     }
   ]
 }

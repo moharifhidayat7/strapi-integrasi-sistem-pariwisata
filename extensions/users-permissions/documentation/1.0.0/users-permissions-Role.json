@@ -589,6 +589,15 @@
                     "type": "string"
                   }
                 },
+                "orders": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "booking": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
