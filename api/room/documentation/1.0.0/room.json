@@ -696,12 +696,6 @@
                 "id": {
                   "type": "string"
                 },
-                "checkin": {
-                  "type": "string"
-                },
-                "checkout": {
-                  "type": "string"
-                },
                 "room": {
                   "type": "string"
                 },
@@ -718,6 +712,28 @@
                   "type": "string"
                 },
                 "phone": {
+                  "type": "string"
+                },
+                "checkin": {
+                  "type": "string"
+                },
+                "checkout": {
+                  "type": "string"
+                },
+                "konfirmasi": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "unpaid",
+                    "waiting",
+                    "paid",
+                    "success",
+                    "canceled"
+                  ]
+                },
+                "name": {
                   "type": "string"
                 },
                 "created_by": {

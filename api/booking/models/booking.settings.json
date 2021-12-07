@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "checkin": {
-      "type": "date"
-    },
-    "checkout": {
-      "type": "date"
-    },
     "room": {
       "model": "room",
       "via": "bookings"
@@ -31,12 +25,42 @@
     "users_permissions_user": {
       "plugin": "users-permissions",
       "model": "user",
-      "via": "booking"
+      "via": "bookings"
     },
     "email": {
       "type": "email"
     },
     "phone": {
+      "type": "string"
+    },
+    "checkin": {
+      "type": "string"
+    },
+    "checkout": {
+      "type": "string"
+    },
+    "konfirmasi": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "waiting",
+        "paid",
+        "success",
+        "canceled"
+      ],
+      "default": "unpaid"
+    },
+    "name": {
       "type": "string"
     }
   }

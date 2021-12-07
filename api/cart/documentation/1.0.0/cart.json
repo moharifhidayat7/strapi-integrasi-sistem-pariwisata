@@ -593,8 +593,11 @@
                   "type": "string"
                 }
               },
-              "booking": {
-                "type": "string"
+              "bookings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"

@@ -97,9 +97,9 @@
       "via": "users_permissions_user",
       "collection": "order"
     },
-    "booking": {
+    "bookings": {
       "via": "users_permissions_user",
-      "model": "booking"
+      "collection": "booking"
     }
   }
 }

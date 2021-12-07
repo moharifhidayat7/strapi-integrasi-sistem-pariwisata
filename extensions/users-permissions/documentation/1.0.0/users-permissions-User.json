@@ -1551,43 +1551,62 @@
               }
             }
           },
-          "booking": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "checkin": {
-                "type": "string"
-              },
-              "checkout": {
-                "type": "string"
-              },
-              "room": {
-                "type": "string"
-              },
-              "people": {
-                "type": "integer"
-              },
-              "price": {
-                "type": "integer"
-              },
-              "users_permissions_user": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+          "bookings": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "room": {
+                  "type": "string"
+                },
+                "people": {
+                  "type": "integer"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "checkin": {
+                  "type": "string"
+                },
+                "checkout": {
+                  "type": "string"
+                },
+                "konfirmasi": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "unpaid",
+                    "waiting",
+                    "paid",
+                    "success",
+                    "canceled"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -1680,8 +1699,11 @@
               "type": "string"
             }
           },
-          "booking": {
-            "type": "string"
+          "bookings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

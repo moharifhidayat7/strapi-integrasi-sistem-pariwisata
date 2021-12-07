@@ -522,14 +522,6 @@
           "id": {
             "type": "string"
           },
-          "checkin": {
-            "type": "string",
-            "format": "date"
-          },
-          "checkout": {
-            "type": "string",
-            "format": "date"
-          },
           "room": {
             "required": [
               "id",
@@ -649,8 +641,11 @@
                   "type": "string"
                 }
               },
-              "booking": {
-                "type": "string"
+              "bookings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -665,19 +660,98 @@
           },
           "phone": {
             "type": "string"
+          },
+          "checkin": {
+            "type": "string"
+          },
+          "checkout": {
+            "type": "string"
+          },
+          "konfirmasi": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "default": "unpaid",
+            "enum": [
+              "unpaid",
+              "waiting",
+              "paid",
+              "success",
+              "canceled"
+            ]
+          },
+          "name": {
+            "type": "string"
           }
         }
       },
       "NewBooking": {
         "properties": {
-          "checkin": {
-            "type": "string",
-            "format": "date"
-          },
-          "checkout": {
-            "type": "string",
-            "format": "date"
-          },
           "room": {
             "type": "string"
           },
@@ -694,6 +768,26 @@
             "type": "string"
           },
           "phone": {
+            "type": "string"
+          },
+          "checkin": {
+            "type": "string"
+          },
+          "checkout": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "default": "unpaid",
+            "enum": [
+              "unpaid",
+              "waiting",
+              "paid",
+              "success",
+              "canceled"
+            ]
+          },
+          "name": {
             "type": "string"
           },
           "created_by": {
