@@ -10,6 +10,7 @@ module.exports = ({ env }) => ({
           user: env('EMAIL_SMTP_USER'),
           pass: env('EMAIL_SMTP_PASS'),
         },
+        ignoreTLS: true,
       },
       settings: {
         defaultFrom: 'noreply@rumahdigitalgombengsari.com',
